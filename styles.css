@@ -1,0 +1,357 @@
+/* https://mycolor.space/gradient used for background gradient */
+
+
+:root {
+    --primary-color: #1a0033;
+    --secondary-color: #7b2cbf;
+    --accent-color: #c77dff;
+    --background-color: #10002b;
+    --text-color: #e0aaff;
+    --white: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    animation: backgroundScroll 60s linear infinite;
+}
+
+@keyframes backgroundScroll {
+    0% { background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; }
+    100% { background-position: 550px 550px, 590px 610px, 680px 820px, 620px 650px; }
+}
+
+.luna-glow-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(26, 0, 51, 0.8);
+    box-shadow: 0 0 20px rgba(199, 125, 255, 0.3);
+}
+
+.luna-glow-header {
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.luna-glow-title {
+    font-family: 'Comfortaa', cursive;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 3.5em;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(199, 125, 255, 0.7);
+}
+
+.luna-glow-subtitle {
+    font-family: 'Space Mono', monospace;
+    color: var(--text-color);
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+.luna-glow-constellation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23c77dff"/></svg>');
+    background-size: 10px 10px;
+    opacity: 0.3;
+    animation: twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
+}
+
+.luna-glow-section {
+    background-color: rgba(26, 0, 51, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.luna-glow-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(199, 125, 255, 0.2);
+}
+
+.luna-glow-journey-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.luna-glow-journey-text {
+    flex: 1 1 400px;
+}
+
+.luna-glow-journey-images {
+    flex: 1 1 400px;
+}
+
+.luna-glow-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.luna-glow-image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.luna-glow-image-container:hover .luna-glow-image {
+    transform: scale(1.1);
+}
+
+.luna-glow-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(199, 125, 255, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.luna-glow-image-container:hover::after {
+    opacity: 1;
+}
+
+.luna-glow-journey-progress {
+    margin-top: 40px;
+}
+
+.luna-glow-progress-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.luna-glow-progress-icon {
+    font-size: 2em;
+    margin-right: 20px;
+}
+
+.luna-glow-progress-info {
+    flex-grow: 1;
+}
+
+.luna-glow-progress-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.luna-glow-progress-bar {
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.luna-glow-progress-fill {
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.5s ease-in-out;
+}
+
+.luna-glow-hobbies ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.luna-glow-hobbies li {
+    padding: 10px 0;
+    position: relative;
+}
+
+.luna-glow-hobbies li::before {
+    content: "✧";
+    position: absolute;
+    left: -20px;
+    color: var(--accent-color);
+}
+
+.luna-glow-poem {
+    font-style: italic;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    line-height: 2;
+}
+
+.luna-glow-skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.luna-glow-skill {
+    background-color: rgba(123, 44, 191, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.luna-glow-skill::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(199, 125, 255, 0.2) 0%, transparent 70%);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.luna-glow-skill:hover::before {
+    top: -25%;
+    left: -25%;
+}
+
+.luna-glow-skill:hover {
+    transform: translateY(-5px) rotate(2deg);
+    box-shadow: 0 10px 20px rgba(199, 125, 255, 0.2);
+}
+
+.luna-glow-skill h3 {
+    color: var(--accent-color);
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    position: relative;
+    z-index: 1;
+}
+
+.luna-glow-skill p {
+    font-size: 0.9em;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .luna-glow-title {
+        font-size: 2em;
+    }
+
+    .luna-glow-subtitle {
+        font-size: 1em;
+    }
+
+    .luna-glow-section {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .luna-glow-title {
+        font-size: 1.5em;
+    }
+
+    .luna-glow-subtitle {
+        font-size: 0.8em;
+    }
+
+    .luna-glow-section {
+        padding: 20px;
+    }
+}
+
+::selection {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Innovative Animations */
+@keyframes floatAnimation {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.luna-glow-title, .luna-glow-subtitle {
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { text-shadow: 0 0 5px rgba(199, 125, 255, 0.7); }
+    50% { text-shadow: 0 0 20px rgba(199, 125, 255, 0.9); }
+}
+
+.luna-glow-title {
+    animation: glowPulse 3s infinite;
+}
+
+.luna-glow-journey-content, .luna-glow-hobbies, .luna-glow-poem, .luna-glow-skills {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.luna-glow-journey-content.visible,
+.luna-glow-hobbies.visible,
+.luna-glow-poem.visible,
+.luna-glow-skills.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Particle effect for constellation */
+.particle {
+    position: absolute;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleAnimation 3s infinite ease-in-out;
+}
+
+@keyframes particleAnimation {
+    0% { transform: scale(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: scale(1); opacity: 0; }
+}
